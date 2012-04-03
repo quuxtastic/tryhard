@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "client", "game\client\swarm_sdk_client.vcxproj", "{A26C0361-6B09-9E3D-5194-C9CB89243710}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "server", "game\server\swarm_sdk_server.vcxproj", "{4E5DA204-1386-420B-A2BC-3F126249E21F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MissionChooser", "game\missionchooser\swarm_sdk_missionchooser.vcxproj", "{234F476B-09F9-4193-A60D-AD2E965F45DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A26C0361-6B09-9E3D-5194-C9CB89243710}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A26C0361-6B09-9E3D-5194-C9CB89243710}.Debug|Win32.Build.0 = Debug|Win32
+		{A26C0361-6B09-9E3D-5194-C9CB89243710}.Release|Win32.ActiveCfg = Release|Win32
+		{A26C0361-6B09-9E3D-5194-C9CB89243710}.Release|Win32.Build.0 = Release|Win32
+		{4E5DA204-1386-420B-A2BC-3F126249E21F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4E5DA204-1386-420B-A2BC-3F126249E21F}.Debug|Win32.Build.0 = Debug|Win32
+		{4E5DA204-1386-420B-A2BC-3F126249E21F}.Release|Win32.ActiveCfg = Release|Win32
+		{4E5DA204-1386-420B-A2BC-3F126249E21F}.Release|Win32.Build.0 = Release|Win32
+		{234F476B-09F9-4193-A60D-AD2E965F45DA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{234F476B-09F9-4193-A60D-AD2E965F45DA}.Debug|Win32.Build.0 = Debug|Win32
+		{234F476B-09F9-4193-A60D-AD2E965F45DA}.Release|Win32.ActiveCfg = Release|Win32
+		{234F476B-09F9-4193-A60D-AD2E965F45DA}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
