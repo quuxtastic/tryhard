@@ -23,7 +23,7 @@ To add the variable:
 
 In Visual C++:
 
-Open the VS solution file /src/alien_swarm.sln
+Open the VS solution file /src/tryhard.sln
 
 On the command line:
 
@@ -31,4 +31,4 @@ First, you may need to import VS environment variables:
 > call "path/to/vs/install/folder/vc/vcvarsall.bat" x86
 
 Then, in the /src directory:
-> msbuild alien_swarm.sln
+> msbuild tryhard.sln
