@@ -19,7 +19,7 @@ To add the variable:
 4. Under "User variables for (you)", choose New...
 5. Enter STEAM_ROOT as the variable name, and the path to your Steam installation as the value, without a trailing \
 6. Choose OK
-
+7. Restart VS if it was running, so it will pick up the added environment variable
 
 In Visual C++:
 
