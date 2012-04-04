@@ -9,6 +9,18 @@ MS Visual C++ 2010 (https://www.microsoft.com/visualstudio/en-us/products/2010-e
 Building
 ------------
 
+First, you'll need to set up the environment variable STEAM_ROOT to tell VS where your Steam installation lives. This
+is usually C:\Program Files (x86)\Steam in Vista or 7.
+
+To add the variable:
+1. Start, Right-click on Computer, choose Properties
+2. Choose Advanced System Settings
+3. Select the Advanced tab, choose Environment Variables...
+4. Under "User variables for (you)", choose New...
+5. Enter STEAM_ROOT as the variable name, and the path to your Steam installation as the value, without a trailing \
+6. Choose OK
+
+
 In Visual C++:
 
 Open the VS solution file /src/alien_swarm.sln
