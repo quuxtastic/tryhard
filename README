@@ -1,3 +1,22 @@
-To Do:
+Requirements
+------------
 
-Make game
+Steam (http://cdn.steampowered.com/download/SteamInstall.msi)
+Alien Swarm SDK (steam://install/513)
+MS Visual C++ 2010 (https://www.microsoft.com/visualstudio/en-us/products/2010-editions/express-iso)
+  (Express or higher versions)
+
+Building
+------------
+
+In Visual C++:
+
+Open the VS solution file /src/alien_swarm.sln
+
+On the command line:
+
+First, you may need to import VS environment variables:
+> call "path/to/vs/install/folder/vc/vcvarsall.bat" x86
+
+Then, in the /src directory:
+> msbuild alien_swarm.sln
