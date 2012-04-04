@@ -1,1 +1,34 @@
-READ ME, WHY YOU EMPTY?
+Requirements
+------------
+
+Steam (http://cdn.steampowered.com/download/SteamInstall.msi)
+Alien Swarm SDK (steam://install/513)
+MS Visual C++ 2010 (https://www.microsoft.com/visualstudio/en-us/products/2010-editions/express-iso)
+  (Express or higher versions)
+
+Building
+------------
+
+First, you'll need to set up the environment variable STEAM_ROOT to tell VS where your Steam installation lives. This
+is usually C:\Program Files (x86)\Steam in Vista or 7.
+
+To add the variable:
+1. Start, Right-click on Computer, choose Properties
+2. Choose Advanced System Settings
+3. Select the Advanced tab, choose Environment Variables...
+4. Under "User variables for (you)", choose New...
+5. Enter STEAM_ROOT as the variable name, and the path to your Steam installation as the value, without a trailing \
+6. Choose OK
+7. Restart VS if it was running, so it will pick up the added environment variable
+
+In Visual C++:
+
+Open the VS solution file /src/tryhard.sln
+
+On the command line:
+
+First, you may need to import VS environment variables:
+> call "path/to/vs/install/folder/vc/vcvarsall.bat" x86
+
+Then, in the /src directory:
+> msbuild tryhard.sln
