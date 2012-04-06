@@ -101,7 +101,9 @@ void CASW_Spawner::Precache()
 
 IASW_Spawnable_NPC* CASW_Spawner::SpawnAlien( const char *szAlienClassName, const Vector &vecHullMins, const Vector &vecHullMaxs )
 {
+  SetSpawnerState(SST_Finished);
 	IASW_Spawnable_NPC *pSpawnable = BaseClass::SpawnAlien( szAlienClassName, vecHullMins, vecHullMaxs );
+  /*
 	if ( pSpawnable )
 	{
 		m_nCurrentLiveAliens++;
@@ -119,6 +121,7 @@ IASW_Spawnable_NPC* CASW_Spawner::SpawnAlien( const char *szAlienClassName, cons
 			ASWFailAdvice()->OnAlienSpawnedInfinite();
 		}
 	}
+  */
 	return pSpawnable;
 }
 
