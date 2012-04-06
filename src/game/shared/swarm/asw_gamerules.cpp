@@ -116,7 +116,7 @@ extern ConVar old_radius_damage;
 	extern ConVar asw_horde;
 	extern ConVar asw_director_controls_spawns;
 	extern ConVar asw_medal_barrel_kills;
-	ConVar asw_objective_slowdown_time( "asw_objective_slowdown_time", "1.8", FCVAR_CHEAT, "Length of time that the slowdown effect lasts." );
+	ConVar asw_objective_slowdown_time( "asw_objective_slowdown_time", "0", FCVAR_CHEAT, "Length of time that the slowdown effect lasts." );
 	ConVar asw_marine_explosion_protection("asw_marine_explosion_protection", "0.5", FCVAR_CHEAT, "Reduction of explosion radius against marines");
 	ConVar asw_door_explosion_boost("asw_door_explosion_boost", "2.0", FCVAR_CHEAT, "Sets damage scale for grenades vs doors");
 	ConVar asw_difficulty_alien_health_step("asw_difficulty_alien_health_step", "0.2", 0, "How much alien health is changed per mission difficulty level");
@@ -157,7 +157,7 @@ ConVar asw_vote_duration("asw_vote_duration", "30", FCVAR_REPLICATED, "Time allo
 ConVar asw_marine_death_cam("asw_marine_death_cam", "0", FCVAR_CHEAT | FCVAR_REPLICATED, "Use death cam");
 ConVar asw_marine_death_cam_time_interp("asw_marine_death_cam_time_interp", "0.5", FCVAR_CHEAT | FCVAR_REPLICATED, "Time to blend into the death cam");
 ConVar asw_marine_death_cam_time_interp_out("asw_marine_death_cam_time_interp_out", "0.75", FCVAR_CHEAT | FCVAR_REPLICATED, "Time to blend out of the death cam");
-ConVar asw_marine_death_cam_time("asw_marine_death_cam_time", "0.4", FCVAR_CHEAT | FCVAR_REPLICATED, "Time to do the slowdown death cam");
+ConVar asw_marine_death_cam_time("asw_marine_death_cam_time", "0.0", FCVAR_CHEAT | FCVAR_REPLICATED, "Time to do the slowdown death cam");
 ConVar asw_marine_death_cam_hold("asw_marine_death_cam_time_hold", "1.75", FCVAR_CHEAT | FCVAR_REPLICATED, "Time to hold on the dying marine at time ramps back up");
 ConVar asw_marine_death_cam_time_local_hold("asw_marine_death_cam_time_local_hold", "5.0", FCVAR_CHEAT | FCVAR_REPLICATED, "Time to hold on the dying marine at time ramps back up if they died");
 ConVar asw_marine_death_cam_time_scale("asw_marine_death_cam_time_scale", "0.035", FCVAR_CHEAT | FCVAR_REPLICATED, "Time scale during death cam");

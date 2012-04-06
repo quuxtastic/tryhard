@@ -1,16 +1,19 @@
 Requirements
-------------
+=========================
 
 Steam (http://cdn.steampowered.com/download/SteamInstall.msi)
 Alien Swarm SDK (steam://install/513)
 MS Visual C++ 2010 (https://www.microsoft.com/visualstudio/en-us/products/2010-editions/express-iso)
   (Express or higher versions)
 
-Building
-------------
+Getting it working
+=========================
 
-First, you'll need to set up the environment variable STEAM_ROOT to tell VS where your Steam installation lives. This
-is usually C:\Program Files (x86)\Steam in Vista or 7.
+Set STEAM_ROOT
+-------------------------
+
+First, you'll need to set up the environment variable STEAM_ROOT to tell VS where your Steam installation lives.
+This is usually C:\Program Files (x86)\Steam in Vista or 7.
 
 To add the variable:
 1. Start, Right-click on Computer, choose Properties
@@ -21,14 +24,24 @@ To add the variable:
 6. Choose OK
 7. Restart VS if it was running, so it will pick up the added environment variable
 
-In Visual C++:
+Create sourcemod folder
+-------------------------
 
-Open the VS solution file /src/tryhard.sln
+Next, you'll need to create the game's sourceMod folder for it to run properly in Steam.
+This will eventually be part of the build process, but for now it must be done manually.
 
-On the command line:
+1. Copy the whole /modsrc folder from your git repository to STEAM_ROOT\steamapps\sourcemods\
+2. Rename the copied folder to "tryhard"
 
-First, you may need to import VS environment variables:
+Building
+-------------------------
+
+Open the VS solution file /src/tryhard.sln. Make sure that client is set as the default project (it should be bolded).
+You should be able to hit F5 (or go to Debug -> Start Debugging). The files should be built automatically.
+
+If you want to build the project outside of VS, you'll need to follow these steps:
+1. You may need to define VS's environment variables:
 > call "path/to/vs/install/folder/vc/vcvarsall.bat" x86
-
-Then, in the /src directory:
+2. cd to the /src directory in your github repo
+3. run msbuild:
 > msbuild tryhard.sln

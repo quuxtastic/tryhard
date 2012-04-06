@@ -22,7 +22,7 @@ LINK_ENTITY_TO_CLASS( asw_spawner, CASW_Spawner );
 //ConVar asw_uber_drone_chance("asw_uber_drone_chance", "0.25f", FCVAR_CHEAT, "Chance of an uber drone spawning when playing in uber mode");
 extern ConVar asw_debug_spawners;
 extern ConVar asw_drone_health;
-ConVar asw_spawning_enabled( "asw_spawning_enabled", "1", FCVAR_CHEAT, "If set to 0, asw_spawners won't spawn aliens" );
+ConVar asw_spawning_enabled( "asw_spawning_enabled", "0", FCVAR_CHEAT, "If set to 0, asw_spawners won't spawn aliens" );
 
 BEGIN_DATADESC( CASW_Spawner )
 	DEFINE_KEYFIELD( m_nMaxLiveAliens,			FIELD_INTEGER,	"MaxLiveAliens" ),
@@ -101,7 +101,9 @@ void CASW_Spawner::Precache()
 
 IASW_Spawnable_NPC* CASW_Spawner::SpawnAlien( const char *szAlienClassName, const Vector &vecHullMins, const Vector &vecHullMaxs )
 {
+  
 	IASW_Spawnable_NPC *pSpawnable = BaseClass::SpawnAlien( szAlienClassName, vecHullMins, vecHullMaxs );
+ 
 	if ( pSpawnable )
 	{
 		m_nCurrentLiveAliens++;
@@ -119,6 +121,7 @@ IASW_Spawnable_NPC* CASW_Spawner::SpawnAlien( const char *szAlienClassName, cons
 			ASWFailAdvice()->OnAlienSpawnedInfinite();
 		}
 	}
+ 
 	return pSpawnable;
 }
 
@@ -175,7 +178,7 @@ void CASW_Spawner::AlienKilled( CBaseEntity *pVictim )
 // mission started
 void CASW_Spawner::MissionStart()
 {
-	if (asw_debug_spawners.GetBool())
+/*	if (asw_debug_spawners.GetBool())
 		Msg("Spawner mission start, always inf=%d infinitealiens=%d\n", HasSpawnFlags( ASW_SF_ALWAYS_INFINITE ), m_bInfiniteAliens );
 	// remove infinite spawns on easy mode
 	if ( !HasSpawnFlags( ASW_SF_ALWAYS_INFINITE ) && ASWGameRules() && ASWGameRules()->GetSkillLevel() == 1
@@ -190,7 +193,7 @@ void CASW_Spawner::MissionStart()
 	}
 
 	if (m_SpawnerState == SST_StartSpawningWhenMissionStart)
-		SetSpawnerState(SST_Spawning);
+		SetSpawnerState(SST_Spawning);							*/
 }
 
 void CASW_Spawner::SetSpawnerState(SpawnerState_t newState)

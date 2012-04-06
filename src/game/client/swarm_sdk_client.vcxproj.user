@@ -3,7 +3,7 @@
   <PropertyGroup>
     <ShowAllFiles>true</ShowAllFiles>
     <LocalDebuggerCommand Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(STEAM_ROOT)\steamapps\common\alien swarm\swarm.exe</LocalDebuggerCommand>
-    <LocalDebuggerCommandArguments Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">-allowdebug -novid -game "$(STEAM_ROOT)\steamapps\sourcemods\$(SolutionName)"</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">-sw -dev -allowdebug -novid -game "$(STEAM_ROOT)\steamapps\sourcemods\$(SolutionName)"</LocalDebuggerCommandArguments>
     <LocalDebuggerCommand Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Program Files (x86)\Steam\steamapps\common\alien swarm\swarm.exe</LocalDebuggerCommand>
     <LocalDebuggerCommandArguments Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">-allowdebug -novid -game "C:\Program Files (x86)\Steam\steamapps\sourcemods\tryhard"</LocalDebuggerCommandArguments>
     <DebuggerFlavor Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">WindowsLocalDebugger</DebuggerFlavor>
