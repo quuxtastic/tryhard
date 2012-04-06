@@ -154,7 +154,7 @@ extern ConVar old_radius_damage;
 #endif
 
 ConVar asw_vote_duration("asw_vote_duration", "30", FCVAR_REPLICATED, "Time allowed to vote on a map/campaign/saved game change.");
-ConVar asw_marine_death_cam("asw_marine_death_cam", "1", FCVAR_CHEAT | FCVAR_REPLICATED, "Use death cam");
+ConVar asw_marine_death_cam("asw_marine_death_cam", "0", FCVAR_CHEAT | FCVAR_REPLICATED, "Use death cam");
 ConVar asw_marine_death_cam_time_interp("asw_marine_death_cam_time_interp", "0.5", FCVAR_CHEAT | FCVAR_REPLICATED, "Time to blend into the death cam");
 ConVar asw_marine_death_cam_time_interp_out("asw_marine_death_cam_time_interp_out", "0.75", FCVAR_CHEAT | FCVAR_REPLICATED, "Time to blend out of the death cam");
 ConVar asw_marine_death_cam_time("asw_marine_death_cam_time", "0.4", FCVAR_CHEAT | FCVAR_REPLICATED, "Time to do the slowdown death cam");
@@ -165,7 +165,7 @@ ConVar asw_campaign_death("asw_campaign_death", "0", FCVAR_REPLICATED, "Whether 
 ConVar asw_objective_update_time_scale("asw_objective_update_time_scale", "0.2", FCVAR_CHEAT | FCVAR_REPLICATED, "Time scale during objective updates");
 ConVar asw_stim_time_scale("asw_stim_time_scale", "0.35", FCVAR_REPLICATED | FCVAR_CHEAT, "Time scale during stimpack slomo");
 ConVar asw_time_scale_delay("asw_time_scale_delay", "0.15", FCVAR_REPLICATED | FCVAR_CHEAT, "Delay before timescale changes to give a chance for the client to comply and predict.");
-ConVar asw_ignore_need_two_player_requirement("asw_ignore_need_two_player_requirement", "0", FCVAR_REPLICATED, "If set to 1, ignores the mission setting that states two players are needed to start the mission.");
+ConVar asw_ignore_need_two_player_requirement("asw_ignore_need_two_player_requirement", "1", FCVAR_REPLICATED, "If set to 1, ignores the mission setting that states two players are needed to start the mission.");
 ConVar mp_gamemode( "mp_gamemode", "campaign", FCVAR_REPLICATED | FCVAR_DEVELOPMENTONLY, "Current game mode, acceptable values are campaign and single_mission.", false, 0.0f, false, 0.0f );
 ConVar asw_sentry_friendly_fire_scale( "asw_sentry_friendly_fire_scale", "0", FCVAR_REPLICATED, "Damage scale for sentry gun friendly fire"
 #ifdef GAME_DLL
@@ -2703,6 +2703,7 @@ void CAlienSwarm::OnServerHibernating()
 }
 
 // Respawn a dead marine.
+//Josh TODO
 void CAlienSwarm::Resurrect( CASW_Marine_Resource * RESTRICT pMR, CASW_Marine *pRespawnNearMarine )  
 {
 	//AssertMsg1( !pMR->IsAlive() && 
@@ -3871,6 +3872,7 @@ bool CAlienSwarm::ShouldCollide( int collisionGroup0, int collisionGroup1 )
 	}
 
 	// marines don't collide with other marines
+  //Josh: TODO MARINE COLISION
 	if ( !asw_marine_collision.GetBool() )
 	{
 		if (collisionGroup0 == COLLISION_GROUP_PLAYER && collisionGroup1 == COLLISION_GROUP_PLAYER)
