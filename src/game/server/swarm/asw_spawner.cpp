@@ -68,7 +68,7 @@ void CASW_Spawner::InitAlienClassName()
 }
 
 void CASW_Spawner::Spawn()
-{/*
+{
 	InitAlienClassName();
 
 	BaseClass::Spawn();
@@ -80,7 +80,7 @@ void CASW_Spawner::Spawn()
 	m_nCurrentLiveAliens = 0;
 
 	// trigger any begin state stuff
-	SetSpawnerState(m_SpawnerState);*/
+	SetSpawnerState(m_SpawnerState);
 }
 
 void CASW_Spawner::Precache()
