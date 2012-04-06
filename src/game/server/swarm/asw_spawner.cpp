@@ -221,6 +221,7 @@ void CASW_Spawner::SetSpawnerState(SpawnerState_t newState)
 void CASW_Spawner::SpawnerThink()
 {	
 	// calculate jitter
+  /*
 	float fInterval = random->RandomFloat(1.0f - m_flSpawnIntervalJitter, 1.0f + m_flSpawnIntervalJitter) * m_flSpawnInterval;
 	SetNextThink( gpGlobals->curtime + fInterval );
 
@@ -228,6 +229,7 @@ void CASW_Spawner::SpawnerThink()
 	{
 		SpawnAlien( STRING( m_AlienClassName ), GetAlienMins(), GetAlienMaxs() );
 	}
+  */
 }
 
 // =====================
