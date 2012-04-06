@@ -133,7 +133,7 @@ void C_ASW_Marine_Resource::GetDisplayName( wchar_t *pwchDisplayName, int nMaxBy
 		else
 		{
 			// Use the character name
-			pchName = GetProfile()->GetShortName();
+			pchName = "Your Name Belongs to Me Now";
 		}
 	}
 
