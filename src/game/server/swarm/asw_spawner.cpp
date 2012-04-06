@@ -178,7 +178,7 @@ void CASW_Spawner::AlienKilled( CBaseEntity *pVictim )
 // mission started
 void CASW_Spawner::MissionStart()
 {
-	if (asw_debug_spawners.GetBool())
+/*	if (asw_debug_spawners.GetBool())
 		Msg("Spawner mission start, always inf=%d infinitealiens=%d\n", HasSpawnFlags( ASW_SF_ALWAYS_INFINITE ), m_bInfiniteAliens );
 	// remove infinite spawns on easy mode
 	if ( !HasSpawnFlags( ASW_SF_ALWAYS_INFINITE ) && ASWGameRules() && ASWGameRules()->GetSkillLevel() == 1
@@ -192,8 +192,8 @@ void CASW_Spawner::MissionStart()
 			Msg("  removed infinite and set num aliens to %d\n", m_nNumAliens);
 	}
 
-//	if (m_SpawnerState == SST_StartSpawningWhenMissionStart)
-//		SetSpawnerState(SST_Spawning);
+	if (m_SpawnerState == SST_StartSpawningWhenMissionStart)
+		SetSpawnerState(SST_Spawning);							*/
 }
 
 void CASW_Spawner::SetSpawnerState(SpawnerState_t newState)
@@ -236,7 +236,7 @@ void CASW_Spawner::SpawnerThink()
 
 void CASW_Spawner::SpawnOneAlien()
 {
-//	SpawnAlien( STRING( m_AlienClassName ), GetAlienMins(), GetAlienMaxs() );
+	SpawnAlien( STRING( m_AlienClassName ), GetAlienMins(), GetAlienMaxs() );
 }
 
 void CASW_Spawner::InputSpawnAlien( inputdata_t &inputdata )
