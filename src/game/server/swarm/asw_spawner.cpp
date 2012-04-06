@@ -22,7 +22,7 @@ LINK_ENTITY_TO_CLASS( asw_spawner, CASW_Spawner );
 //ConVar asw_uber_drone_chance("asw_uber_drone_chance", "0.25f", FCVAR_CHEAT, "Chance of an uber drone spawning when playing in uber mode");
 extern ConVar asw_debug_spawners;
 extern ConVar asw_drone_health;
-ConVar asw_spawning_enabled( "asw_spawning_enabled", "1", FCVAR_CHEAT, "If set to 0, asw_spawners won't spawn aliens" );
+ConVar asw_spawning_enabled( "asw_spawning_enabled", "0", FCVAR_CHEAT, "If set to 0, asw_spawners won't spawn aliens" );
 
 BEGIN_DATADESC( CASW_Spawner )
 	DEFINE_KEYFIELD( m_nMaxLiveAliens,			FIELD_INTEGER,	"MaxLiveAliens" ),
@@ -101,9 +101,9 @@ void CASW_Spawner::Precache()
 
 IASW_Spawnable_NPC* CASW_Spawner::SpawnAlien( const char *szAlienClassName, const Vector &vecHullMins, const Vector &vecHullMaxs )
 {
-  SetSpawnerState(SST_Finished);
+  
 	IASW_Spawnable_NPC *pSpawnable = BaseClass::SpawnAlien( szAlienClassName, vecHullMins, vecHullMaxs );
-  /*
+ 
 	if ( pSpawnable )
 	{
 		m_nCurrentLiveAliens++;
@@ -121,7 +121,7 @@ IASW_Spawnable_NPC* CASW_Spawner::SpawnAlien( const char *szAlienClassName, cons
 			ASWFailAdvice()->OnAlienSpawnedInfinite();
 		}
 	}
-  */
+ 
 	return pSpawnable;
 }
 
@@ -221,7 +221,6 @@ void CASW_Spawner::SetSpawnerState(SpawnerState_t newState)
 void CASW_Spawner::SpawnerThink()
 {	
 	// calculate jitter
-  /*
 	float fInterval = random->RandomFloat(1.0f - m_flSpawnIntervalJitter, 1.0f + m_flSpawnIntervalJitter) * m_flSpawnInterval;
 	SetNextThink( gpGlobals->curtime + fInterval );
 
@@ -229,7 +228,6 @@ void CASW_Spawner::SpawnerThink()
 	{
 		SpawnAlien( STRING( m_AlienClassName ), GetAlienMins(), GetAlienMaxs() );
 	}
-  */
 }
 
 // =====================
