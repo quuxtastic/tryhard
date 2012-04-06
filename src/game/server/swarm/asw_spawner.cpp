@@ -236,7 +236,7 @@ void CASW_Spawner::SpawnerThink()
 
 void CASW_Spawner::SpawnOneAlien()
 {
-/	SpawnAlien( STRING( m_AlienClassName ), GetAlienMins(), GetAlienMaxs() );
+	SpawnAlien( STRING( m_AlienClassName ), GetAlienMins(), GetAlienMaxs() );
 }
 
 void CASW_Spawner::InputSpawnAlien( inputdata_t &inputdata )
