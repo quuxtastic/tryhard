@@ -192,8 +192,8 @@ void CASW_Spawner::MissionStart()
 			Msg("  removed infinite and set num aliens to %d\n", m_nNumAliens);
 	}
 
-	if (m_SpawnerState == SST_StartSpawningWhenMissionStart)
-		SetSpawnerState(SST_Spawning);
+//	if (m_SpawnerState == SST_StartSpawningWhenMissionStart)
+//		SetSpawnerState(SST_Spawning);
 }
 
 void CASW_Spawner::SetSpawnerState(SpawnerState_t newState)
