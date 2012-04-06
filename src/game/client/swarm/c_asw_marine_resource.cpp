@@ -118,7 +118,7 @@ void C_ASW_Marine_Resource::GetDisplayName( wchar_t *pwchDisplayName, int nMaxBy
 	if ( gpGlobals->maxClients <= 1 )
 	{
 		// Always use the character name in singleplayer
-		pchName = GetProfile()->GetShortName();
+		pchName = "ThisIsMyName";
 	}
 	else
 	{
