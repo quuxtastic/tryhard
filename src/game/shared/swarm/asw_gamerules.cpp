@@ -155,12 +155,12 @@ extern ConVar old_radius_damage;
 
 ConVar asw_vote_duration("asw_vote_duration", "30", FCVAR_REPLICATED, "Time allowed to vote on a map/campaign/saved game change.");
 ConVar asw_marine_death_cam("asw_marine_death_cam", "0", FCVAR_CHEAT | FCVAR_REPLICATED, "Use death cam");
-ConVar asw_marine_death_cam_time_interp("asw_marine_death_cam_time_interp", "0.5", FCVAR_CHEAT | FCVAR_REPLICATED, "Time to blend into the death cam");
-ConVar asw_marine_death_cam_time_interp_out("asw_marine_death_cam_time_interp_out", "0.75", FCVAR_CHEAT | FCVAR_REPLICATED, "Time to blend out of the death cam");
+ConVar asw_marine_death_cam_time_interp("asw_marine_death_cam_time_interp", "0.0", FCVAR_CHEAT | FCVAR_REPLICATED, "Time to blend into the death cam");
+ConVar asw_marine_death_cam_time_interp_out("asw_marine_death_cam_time_interp_out", "0.0", FCVAR_CHEAT | FCVAR_REPLICATED, "Time to blend out of the death cam");
 ConVar asw_marine_death_cam_time("asw_marine_death_cam_time", "0.0", FCVAR_CHEAT | FCVAR_REPLICATED, "Time to do the slowdown death cam");
-ConVar asw_marine_death_cam_hold("asw_marine_death_cam_time_hold", "1.75", FCVAR_CHEAT | FCVAR_REPLICATED, "Time to hold on the dying marine at time ramps back up");
+ConVar asw_marine_death_cam_hold("asw_marine_death_cam_time_hold", "0.0", FCVAR_CHEAT | FCVAR_REPLICATED, "Time to hold on the dying marine at time ramps back up");
 ConVar asw_marine_death_cam_time_local_hold("asw_marine_death_cam_time_local_hold", "5.0", FCVAR_CHEAT | FCVAR_REPLICATED, "Time to hold on the dying marine at time ramps back up if they died");
-ConVar asw_marine_death_cam_time_scale("asw_marine_death_cam_time_scale", "0.035", FCVAR_CHEAT | FCVAR_REPLICATED, "Time scale during death cam");
+ConVar asw_marine_death_cam_time_scale("asw_marine_death_cam_time_scale", "0.0", FCVAR_CHEAT | FCVAR_REPLICATED, "Time scale during death cam");
 ConVar asw_campaign_death("asw_campaign_death", "0", FCVAR_REPLICATED, "Whether marines are killed in the roster if a mission is completed with the marine dead");
 ConVar asw_objective_update_time_scale("asw_objective_update_time_scale", "0.2", FCVAR_CHEAT | FCVAR_REPLICATED, "Time scale during objective updates");
 ConVar asw_stim_time_scale("asw_stim_time_scale", "0.35", FCVAR_REPLICATED | FCVAR_CHEAT, "Time scale during stimpack slomo");
