@@ -125,21 +125,7 @@ if ERRORLEVEL 1 exit 1
     </Bscmake>
     <PostBuildEvent>
       <Message>Publishing to $(STEAM_ROOT)\SteamApps\sourcemods\$(SolutionName)\bin\.</Message>
-      <Command>if exist "$(STEAM_ROOT)\SteamApps\sourcemods\$(SolutionName)\bin\." goto ValveStart
-mkdir "$(STEAM_ROOT)\SteamApps\sourcemods\$(SolutionName)\bin\."
-:ValveStart
-copy "$(TargetDir)"$(TargetFileName) "$(STEAM_ROOT)\SteamApps\sourcemods\$(SolutionName)\bin\.\$(TargetFileName)"
-if ERRORLEVEL 1 goto BuildEventFailed
-if exist "$(TargetDir)"$(TargetName).map copy "$(TargetDir)"$(TargetName).map "$(STEAM_ROOT)\SteamApps\sourcemods\$(SolutionName)\bin\.\$(TargetName).map"
-copy "$(TargetDir)"$(TargetName).pdb "$(STEAM_ROOT)\SteamApps\sourcemods\$(SolutionName)\bin\.\$(TargetName).pdb"
-if ERRORLEVEL 1 goto BuildEventFailed
-goto BuildEventOK
-:BuildEventFailed
-echo *** ERROR! PostBuildStep FAILED for $(ProjectName)! EXE or DLL is probably running. ***
-del /q "$(TargetDir)"$(TargetFileName)
-exit 1
-:BuildEventOK
-</Command>
+      <Command>call "$(ProjectDir)..\..\..\post-build.bat" $(SolutionName) $(ProjectDir) $(TargetDir) $(TargetFileName) $(TargetName)</Command>
     </PostBuildEvent>
     <CustomBuildStep>
       <Inputs>$(TargetPath)</Inputs>
@@ -222,21 +208,7 @@ if ERRORLEVEL 1 exit 1
     </Bscmake>
     <PostBuildEvent>
       <Message>Publishing to $(STEAM_ROOT)\SteamApps\sourcemods\$(SolutionName)\bin\.</Message>
-      <Command>if exist "$(STEAM_ROOT)\SteamApps\sourcemods\$(SolutionName)\bin\." goto ValveStart
-mkdir "$(STEAM_ROOT)\SteamApps\sourcemods\$(SolutionName)\bin\."
-:ValveStart
-copy "$(TargetDir)"$(TargetFileName) "$(STEAM_ROOT)\SteamApps\sourcemods\$(SolutionName)\bin\.\$(TargetFileName)"
-if ERRORLEVEL 1 goto BuildEventFailed
-if exist "$(TargetDir)"$(TargetName).map copy "$(TargetDir)"$(TargetName).map "$(STEAM_ROOT)\SteamApps\sourcemods\$(SolutionName)\bin\.\$(TargetName).map"
-copy "$(TargetDir)"$(TargetName).pdb "$(STEAM_ROOT)\SteamApps\sourcemods\$(SolutionName)\bin\.\$(TargetName).pdb"
-if ERRORLEVEL 1 goto BuildEventFailed
-goto BuildEventOK
-:BuildEventFailed
-echo *** ERROR! PostBuildStep FAILED for $(ProjectName)! EXE or DLL is probably running. ***
-del /q "$(TargetDir)"$(TargetFileName)
-exit 1
-:BuildEventOK
-</Command>
+      <Command>call "$(ProjectDir)..\..\..\post-build.bat" $(SolutionName) "$(ProjectDir)" "$(TargetDir)" "$(TargetFileName)" "$(TargetName)"</Command>
     </PostBuildEvent>
     <CustomBuildStep>
       <Inputs>$(TargetPath)</Inputs>
