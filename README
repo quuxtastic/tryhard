@@ -24,14 +24,6 @@ To add the variable:
 6. Choose OK
 7. Restart VS if it was running, so it will pick up the added environment variable
 
-Create sourcemod folder
--------------------------
-
-Next, you'll need to create the game's sourceMod folder for it to run properly in Steam.
-This will eventually be part of the build process, but for now it must be done manually.
-
-1. Copy the whole /modsrc folder from your git repository to STEAM_ROOT\steamapps\sourcemods\
-2. Rename the copied folder to "tryhard"
 
 Building
 -------------------------
